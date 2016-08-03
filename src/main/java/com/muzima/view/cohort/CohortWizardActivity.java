@@ -83,6 +83,7 @@ public class CohortWizardActivity extends BroadcastListenerActivity implements L
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         removeSettingsMenu(menu);
+        removeUploadEdittedObsMenu(menu);
         return true;
     }
 

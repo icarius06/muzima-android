@@ -82,4 +82,13 @@ public class BaseFragmentActivity extends SherlockFragmentActivity {
     protected void removeSettingsMenu(Menu menu) {
         dropDownHelper.removeSettingsMenu(menu);
     }
+
+    /**
+     * Disable the upload edited observation menu.
+     * We dont need to see it in this view
+     * @param menu
+     */
+    protected void removeUploadEdittedObsMenu(Menu menu) {
+        dropDownHelper.removeUploadEdittedObsMenu(menu);
+    }
 }

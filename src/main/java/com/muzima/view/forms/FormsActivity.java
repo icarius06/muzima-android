@@ -126,7 +126,6 @@ public class FormsActivity extends FormsActivityBase {
             if (syncStatus == SyncStatusConstants.SUCCESS) {
                 ((FormsPagerAdapter) formsPagerAdapter).onFormUploadFinish();
             }
-
         } else if (syncType == DataSyncServiceConstants.SYNC_TEMPLATES) {
             hideProgressbar();
             if (syncStatus == SyncStatusConstants.SUCCESS) {

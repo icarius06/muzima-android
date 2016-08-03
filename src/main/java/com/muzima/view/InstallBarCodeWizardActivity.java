@@ -45,6 +45,7 @@ public class InstallBarCodeWizardActivity extends BaseActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         removeSettingsMenu(menu);
+        removeUploadEdittedObsMenu(menu);
         return true;
     }
 

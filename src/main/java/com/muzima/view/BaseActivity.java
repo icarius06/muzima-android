@@ -62,4 +62,8 @@ public class BaseActivity extends SherlockActivity {
     protected void removeSettingsMenu(Menu menu) {
         dropDownHelper.removeSettingsMenu(menu);
     }
+
+    protected void removeUploadEdittedObsMenu(Menu menu) {
+        dropDownHelper.removeUploadEdittedObsMenu(menu);
+    }
 }

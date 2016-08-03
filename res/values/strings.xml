@@ -75,6 +75,7 @@
     <string name="no_encounters_available">No Encounters Available</string>
 
     <string name="action_settings">Settings</string>
+    <string name="action_upload_editted_obs">Upload Obs</string>
     <string name="hello_world">Hello world!</string>
     <string name="client_search">Search Name or ID</string>
 	<string name="client_scan">Scan Clients ID</string>

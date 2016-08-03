@@ -79,6 +79,7 @@ public class CustomLocationWizardActivity extends LocationPreferenceActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         removeSettingsMenu(menu);
+        removeUploadEdittedObsMenu(menu);
         return true;
     }
 

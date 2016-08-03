@@ -12,6 +12,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.widget.Toast;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.muzima.R;
@@ -50,6 +51,10 @@ public class DefaultMenuDropDownHelper {
                 intent = new Intent(activity, HelpActivity.class);
                 activity.startActivity(intent);
                 return true;
+            case R.id.action_upload_editted_obs:
+                Toast.makeText(activity,"Triggers upload of Obs data when selected and change status of the data to 'submitted'" +
+                        " if upload is successful.",Toast.LENGTH_LONG).show();
+                return true;
             case R.id.action_logout:
                 SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(activity.getApplicationContext());
                 String passwordKey = activity.getResources().getString(R.string.preference_password);
@@ -67,6 +72,15 @@ public class DefaultMenuDropDownHelper {
 
     public void removeSettingsMenu(Menu menu) {
         MenuItem menuSettings = menu.findItem(R.id.action_settings);
+        menuSettings.setVisible(false);
+    }
+
+    /**
+     * Allow us to disable the upload obs menu item in places its not necessary
+     * @param menu
+     */
+    public void removeUploadEdittedObsMenu(Menu menu) {
+        MenuItem menuSettings = menu.findItem(R.id.action_upload_editted_obs);
         menuSettings.setVisible(false);
     }
 }
