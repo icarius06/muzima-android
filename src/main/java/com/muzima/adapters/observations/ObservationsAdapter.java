@@ -8,10 +8,16 @@
 
 package com.muzima.adapters.observations;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 import com.muzima.R;
 import com.muzima.adapters.ListAdapter;
 import com.muzima.api.model.Concept;
@@ -62,16 +68,53 @@ public abstract class ObservationsAdapter<T> extends ListAdapter<T> {
         protected void addEncounterObservations(List<Observation> observations) {
             for (int i = 0; i < observations.size(); i++) {
                 LinearLayout layout = getLinearLayoutForObservation(i);
-                Observation observation = observations.get(i);
+                final Observation observation = observations.get(i);
 
                 setObservation(layout, observation);
+
+                //when a user clicks on the observation regardless of by encounter or by concept
+                //update to pop up dialog
+                final Context context = layout.getContext();
+                layout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // custom dialog
+                        final Dialog dialog = new Dialog(context);
+                        dialog.setContentView(R.layout.edit_obs_layout);
+                        dialog.setTitle(observation.getConcept().getName());
+
+                        TextView observationValue = (TextView)dialog.findViewById(R.id.observation_value);
+                        observationValue.setText(observation.getValueText());
+
+                        TextView observationDate = (TextView)dialog.findViewById(R.id.observation_date);
+                        observationDate.setText(observation.getValueDatetime().toString());
+
+                        TextView observationReason= (TextView)dialog.findViewById(R.id.observation_reason);
+                        observationReason.setText(observation.getValueText());
+
+
+                        Button dialogButton = (Button) dialog.findViewById(R.id.btnSubmit);
+                        dialogButton.setVisibility(View.VISIBLE); //only if the Obs is of type Free text, numeric or Date
+                        // if button is clicked, close the custom dialog
+                        dialogButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                //handle the uploading bizness here after changing the status of the observation
+                               // observation.setEditStatus("edited");
+                                dialog.dismiss();
+                            }
+                        });
+
+                        dialog.show();
+                    }
+                });
             }
 
             shrink(observations.size());
         }
 
         protected LinearLayout getLinearLayoutForObservation(int i) {
-            LinearLayout layout;
+            final LinearLayout layout;
             if (observationViewHolders.size() <= i) {
                 layout = (LinearLayout) inflater.inflate(getObservationLayout(), null);
                 observationViewHolders.add(layout);

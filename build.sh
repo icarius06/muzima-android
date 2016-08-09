@@ -1,8 +1,8 @@
 NOW="$(date +'%Y-%m-%d')"
-SHARE_DIR=/Users/nribeka/Dropbox/Android/dev/
-BUILD_DIR=/Users/nribeka/Documents/Work/Build
+SHARE_DIR=/home/tulasoft/Documents/Developer/Code/ClientWork/Lakehub/muzima/dev/
+BUILD_DIR=/home/tulasoft/Documents/Developer/Code/ClientWork/Lakehub/muzima/work
 
-ANDROID_HOME=/Users/nribeka/Documents/Work/Android
+ANDROID_HOME=/home/tulasoft/Android
 
 MUZIMA_REPO=https://github.com/muzima/muzima-android.git
 MUZIMA_PROJECT=muzima-android

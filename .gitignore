@@ -5,6 +5,7 @@ project.properties
 gen/
 target/
 muzima-ui.iml
+pom.xml
 gen-external-apklibs/
 out/
 tmp/

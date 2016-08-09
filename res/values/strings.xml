@@ -23,6 +23,14 @@
     <string name="notices">Notices</string>
     <string name="encounters">Encounters</string>
 
+    <string name="observation_value_lbl">Observation value:</string>
+    <string name="observation_value_lbl_hint">Obs Value</string>
+    <string name="observation_datetime_lbl">Observation date</string>
+    <string name="observation_datetime_lbl_hint">Observation Datetime:</string>
+    <string name="observation_reason_lbl">Reason:</string>
+    <string name="observation_reason_lbl_hint">Reason for  editing</string>
+    <string name="observation_edit">Edit</string>
+
     <string name="no_new_form_msg">No Forms Available</string>
     <string name="no_new_form_tip">Please press load to fetch data from server</string>
     <string name="no_downloaded_form_msg">No Forms Have Been Downloaded</string>
